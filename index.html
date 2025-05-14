@@ -2,179 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASTRA – Advanced AI</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AstraTech | Advanced AI Software</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
       background: #0a0a0a;
       color: #e0e0e0;
       overflow-x: hidden;
     }
 
-    .loader {
+    header {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .loader div {
-      border: 5px solid #0ff;
-      border-top: 5px solid #000;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    nav {
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 20px 50px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.8);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background: #111;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
     }
 
-    nav h1 {
-      color: #00f0ff;
-      font-weight: 600;
-      letter-spacing: 1px;
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ffff;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li {
-      cursor: pointer;
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
       transition: 0.3s;
     }
 
-    nav ul li:hover {
-      color: #00f0ff;
+    nav a:hover {
+      color: #00ffff;
     }
 
-    header {
-      height: 100vh;
+    section {
+      min-height: 100vh;
+      padding: 100px 50px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
       text-align: center;
-      padding: 2rem;
+      color: #00ffff;
     }
 
-    header h2 {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-
-    .projects {
-      padding: 4rem 2rem;
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-top: 10px;
       text-align: center;
     }
 
-    .projects h2 {
+    .btn {
+      margin-top: 30px;
+      background: #00ffff;
+      color: #000;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00a3a3;
+    }
+
+    .section-title {
       font-size: 2rem;
-      color: #00f0ff;
-      margin-bottom: 2rem;
+      margin-bottom: 20px;
+      color: #00ffff;
     }
 
-    .project-card {
-      background: #111;
-      padding: 2rem;
-      margin: 1rem auto;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00f0ff22;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
+    .content {
+      max-width: 900px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #ccc;
     }
 
     footer {
-      background: #111;
-      padding: 1rem;
+      padding: 20px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #888;
+      background: #111;
+      color: #777;
     }
 
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      z-index: -1;
     }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<div class="loader" id="loader">
-  <div></div>
-</div>
+  <header>
+    <div class="logo">ASTRATECH</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#astra">ASTRA</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav>
-  <h1>ASTRA</h1>
-  <ul>
-    <li>Home</li>
-    <li>Projects</li>
-    <li>About</li>
-  </ul>
-</nav>
+  <section class="hero" id="home" data-aos="fade-in">
+    <h1><span id="typed"></span></h1>
+    <h2>Building the future with AI, one idea at a time.</h2>
+    <a href="#astra"><button class="btn">Learn More</button></a>
+  </section>
 
-<header data-aos="fade-up">
-  <img src="logo.png" alt="ASTRA Logo" style="width: 120px;" />
-  <h2><span id="typed-text"></span></h2>
-</header>
+  <section id="astra" data-aos="fade-up">
+    <div class="section-title">What is ASTRA?</div>
+    <div class="content">
+      ASTRA (Advanced Self-Training Robotic Artificial Intelligence) is our next-gen AI system designed to revolutionize personal and business automation. Built with learning capabilities, deep integrations, and real-time intelligence.
+    </div>
+  </section>
 
-<section class="projects" id="projects">
-  <h2 data-aos="fade-right">Our Projects</h2>
-  <div class="project-card" data-aos="fade-up">
-    <h3>ASTRA AI Core</h3>
-    <p>Our flagship self-training AI system designed for advanced human-machine interaction.</p>
-  </div>
-  <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-    <h3>Secure Messenger</h3>
-    <p>Offline-first communication app using Wi-Fi Direct, Bluetooth, and encryption protocols.</p>
-  </div>
-</section>
+  <section id="projects" data-aos="fade-up">
+    <div class="section-title">Our Projects</div>
+    <div class="content">
+      We are developing intelligent software tools, communication apps, automation assistants, and more — all powered by ASTRA. Stay tuned!
+    </div>
+  </section>
 
-<footer>
-  © 2025 ASTRA. All rights reserved.
-</footer>
+  <section id="contact" data-aos="fade-up">
+    <div class="section-title">Contact Us</div>
+    <div class="content">
+      <p>Have questions or want to collaborate? Use our form below.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc67mijP93RDNiw6URiXraNtuEShCapFJ1VPauLH3jYGNLiSw/viewform?usp=sf_link" target="_blank">
+        <button class="btn">Open Contact Form</button>
+      </a>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  window.addEventListener("load", () => {
-    document.getElementById("loader").style.display = "none";
-  });
+  <footer>
+    © 2025 AstraTech. All rights reserved.
+  </footer>
 
-  new Typed("#typed-text", {
-    strings: ["Welcome to ASTRA", "Advanced Self-Training AI", "Powering the future of intelligence"],
-    typeSpeed: 50,
-    backSpeed: 25,
-    loop: true
-  });
-</script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+  <script>
+    AOS.init();
+
+    const typed = new Typed('#typed', {
+      strings: ['Welcome to ASTRA', 'Your AI-powered future', 'Advanced AI Software'],
+      typeSpeed: 60,
+      backSpeed: 30,
+      loop: true
+    });
+
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json', function() {
+      console.log('particles.js config loaded');
+    });
+  </script>
 </body>
 </html>
