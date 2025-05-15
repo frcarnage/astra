@@ -1,18 +1,17 @@
-/* style.css */
+/* Reset & Base */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #0d0d0d;
   color: #fff;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+/* Hero Section */
 .hero {
   height: 100vh;
-  width: 100%;
   position: relative;
-  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,32 +31,89 @@ body, html {
 }
 
 .logo {
-  font-size: 4rem;
+  font-size: 5rem;
   color: #00f0ff;
-  letter-spacing: 5px;
   text-shadow: 0 0 20px #00f0ff;
+  letter-spacing: 4px;
 }
 
 #typed-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #ccc;
   margin-top: 1rem;
   display: block;
 }
 
-.btn-glow {
-  margin-top: 2rem;
-  padding: 12px 28px;
-  border: none;
-  background: #00f0ff;
-  color: #000;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: 0 0 15px #00f0ff;
-  text-decoration: none;
+/* Sections */
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h2 {
+  color: #00f0ff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* Aims */
+.aims-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.aims-list li {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #00f0ff;
+  margin: 10px auto;
+  max-width: 600px;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+/* Roadmap */
+.roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  width: 250px;
+  border-radius: 12px;
+  border: 1px solid #00f0ff44;
+  box-shadow: 0 0 15px #00f0ff33;
   transition: 0.3s ease;
 }
 
-.btn-glow:hover {
-  background: #00cfd4;
-  box-shadow: 0 0 25px #00f0ff, 0 0 50px #00f0ff;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00f0ff99;
+}
+
+.card h3 {
+  color: #00f0ff;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 0.9rem;
+  background: #0b0b0b;
+  color: #999;
 }
